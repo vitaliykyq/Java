@@ -63,7 +63,7 @@ public class Main {
 		/* Проверка является ли ФРАЗА палиндромом */
 
 
-		String SomeWords = "А вижу, жива.";
+		String SomeWords = "А вижу, жиeва.";
 
 		//Булевая переменная, в которую записывается, является ли слово палиндромом
 		boolean Pal2 = true;
@@ -71,21 +71,35 @@ public class Main {
 		//Создаем новую переменную, с которой будем проделывать все действия
 		String SomeWordsNew = SomeWords;
 
+		String SomeWordsNew2 = "";
+
+
+		int method = 2;
 
 		//Делаем все буквы в слове маленькими
 		SomeWordsNew = SomeWordsNew.toLowerCase();
 
-		//Удаляем все пробелы с новой строки
-		SomeWordsNew = SomeWordsNew.replace(" ", "");
+		if(method == 1) {
+			//Удаляем все пробелы с новой строки
+			SomeWordsNew = SomeWordsNew.replace(" ", "");
 
-		//Заменяем(удаляем) все символы на ничего(Можно было бы их всунуть в массив, и пройтись циклом, но так нагляднее)
-		SomeWordsNew = SomeWordsNew.replace(",", "");
-		SomeWordsNew = SomeWordsNew.replace("!", "");
-		SomeWordsNew = SomeWordsNew.replace("-", "");
-		SomeWordsNew = SomeWordsNew.replace(".", "");
-		SomeWordsNew = SomeWordsNew.replace("?", "");
-		SomeWordsNew = SomeWordsNew.replace(";", "");
-		SomeWordsNew = SomeWordsNew.replace("'", "");
+			//Заменяем(удаляем) все символы на ничего(Можно было бы их всунуть в массив, и пройтись циклом, но так нагляднее)
+			SomeWordsNew = SomeWordsNew.replace(",", "");
+			SomeWordsNew = SomeWordsNew.replace("!", "");
+			SomeWordsNew = SomeWordsNew.replace("-", "");
+			SomeWordsNew = SomeWordsNew.replace(".", "");
+			SomeWordsNew = SomeWordsNew.replace("?", "");
+			SomeWordsNew = SomeWordsNew.replace(";", "");
+			SomeWordsNew = SomeWordsNew.replace("'", "");
+
+		}else if(method == 2){
+			for (int i = 0; i < SomeWordsNew.length(); i++) {
+				if(SomeWordsNew.charAt(i) != ' ' && SomeWordsNew.charAt(i) != ',' && SomeWordsNew.charAt(i) != '.' && SomeWordsNew.charAt(i) != '!'
+				&& SomeWordsNew.charAt(i) != '-' && SomeWordsNew.charAt(i) != '?' && SomeWordsNew.charAt(i) != ';')
+					SomeWordsNew2 += SomeWordsNew.charAt(i);
+			}
+			SomeWordsNew = SomeWordsNew2;
+		}
 
 		//Проходимся по циклу до количества букв в слове
 		for(int i = 0; i < SomeWordsNew.length(); i++) {
