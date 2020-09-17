@@ -8,7 +8,7 @@ public class Main {
 		/* Создать несколько предложений, используя все типы данных */
 
 		byte King = 18; //max 127
-	    short AgeTurtle = 344; //max 32767
+	        short AgeTurtle = 344; //max 32767
 		int AgeTurtleInHour = AgeTurtle * 365 * 24; //max 2147483647
 		long Eggs = AgeTurtle * 365 * 4; //max 2147483647
 		double WeightTurtle = 248.4;
